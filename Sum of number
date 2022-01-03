@@ -1,0 +1,14 @@
+// Calculating the sum
+package com.company;
+
+public class Main {
+
+    public static void main(String[] args) {
+	int num1 = 23;
+    int num2 = 33;
+    int num3 = 17;
+    int sum = num1 + num2 + num3;
+        System.out.println("The Sum of these number is :");
+        System.out.print(sum);
+    }
+}
