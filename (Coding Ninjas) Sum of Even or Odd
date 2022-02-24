@@ -1,0 +1,25 @@
+import java.util.*;
+public class Main {
+	
+	public static void main(String[] args) {
+		// Write your code here
+        Scanner s = new Scanner(System.in);
+        int num = s.nextInt();
+        int sumEven=0,sumOdd=0;
+        int val = 0;
+        while(num>0){
+            val = num%10;
+            num=num/10;
+            if(val%2==0){
+                sumEven=sumEven + val;
+            }
+            else{
+                sumOdd=sumOdd + val;
+            }
+        }
+        System.out.println(sumEven + " " + sumOdd);
+        
+        
+
+	}
+}
