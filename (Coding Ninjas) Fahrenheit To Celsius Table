@@ -1,0 +1,33 @@
+import java.util.*;
+
+public class Solution {
+
+
+	public static void main(String[] args) {
+		
+		/* Your class should be named Solution.
+	 	* Read input as specified in the question.
+	 	* Print output as specified in the question.
+		*/
+        Scanner s = new Scanner(System.in);
+        int start = s.nextInt();
+        int end = s.nextInt();
+        int gap = s.nextInt();
+        int C=0;
+        int F=start;
+        //System.out.println(end);
+        while(F>=start && F<=end)
+        {
+            C = 5*(F-32)/9;
+            
+            System.out.println(F+" "+C);
+            
+            
+            F=F+gap;
+        }
+        
+
+		
+	}
+
+}
