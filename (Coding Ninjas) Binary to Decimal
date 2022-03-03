@@ -1,0 +1,21 @@
+import java.util.*;
+import java.lang.*;
+public class Main {
+	
+	public static void main(String[] args) {
+		// Write your code here
+        Scanner s = new Scanner(System.in);
+        int num=s.nextInt();
+        int val=0;
+        int i=0;
+        while (num!=0){
+            int rem = num%10;
+            num = num/10;
+            val=val+(int)(rem*Math.pow(2,i));
+            i++;
+            
+        }
+        System.out.println(val);
+
+	}
+}
