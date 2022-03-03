@@ -1,0 +1,19 @@
+import java.util.*;
+public class Main {
+	
+	public static void main(String[] args) {
+		// Write your code here
+        Scanner s = new Scanner(System.in);
+        int num=s.nextInt();
+        int prod;
+        int count=0;
+        for(int i=1;count!=num;i++){
+            prod=(3*i)+2;
+            if(prod%4!=0){
+                System.out.print(prod + " ");
+                count = count +1;
+            }
+        }
+
+	}
+}
