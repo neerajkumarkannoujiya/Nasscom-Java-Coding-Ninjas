@@ -1,0 +1,26 @@
+import java.util.*;
+import java.lang.*;
+public class Main {
+	
+	public static void main(String[] args) {
+		// Write your code here
+        Scanner s = new Scanner(System.in);
+        int num = s.nextInt();
+        String reverse="";
+        if(num ==0){
+            System.out.print("0");
+        }
+        else{
+        while(num!=0){
+            int rem = num%2;
+            num=num/2;
+            String val =String.valueOf(rem);
+            reverse=val+reverse;
+           
+            
+        }
+        System.out.println(reverse);
+        }
+
+	}
+}
