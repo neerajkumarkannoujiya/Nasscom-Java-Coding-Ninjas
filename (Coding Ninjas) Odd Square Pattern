@@ -1,0 +1,39 @@
+'''
+Odd Square
+
+Write a program to print the pattern for the given N number of rows.
+For N = 4
+
+1357
+3571
+5713
+7135
+
+'''
+
+import java.util.*;
+public class Main {
+	
+	public static void main(String[] args) {
+		Scanner inp=new Scanner(System.in);
+        int n=inp.nextInt();
+        int i=1;
+        while(i<=n){
+            int s=2*n-1;
+            int p=2*i-1;
+            while(p<=s){
+                System.out.print(p);
+                p+=2;
+            }
+            int j1=1;
+            int p2=1;
+            while(j1<=i-1){
+                System.out.print(p2);
+                p2+=2;
+                j1+=1; 
+            }
+            i+=1;
+            System.out.println();
+        }
+	}
+}
