@@ -1,0 +1,60 @@
+Largest Row or Column
+
+For a given two-dimensional integer array/list of size (N x M), you need to find out which row or column has the largest sum(sum of all the elements in a row/column) amongst all the rows and columns.
+Note :
+If there are more than one rows/columns with maximum sum, consider the row/column that comes first. And if ith row and jth column has the same largest sum, consider the ith row as answer.
+
+
+Sample Input 1 :
+1
+2 2 
+1 1 
+1 1
+
+Sample Output 1 :
+row 0 2
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+public class Solution {
+    
+    public static int rowSum(int[][] arr,int row) {
+		int rSum = 0;
+			for(int j = 0;j < arr[row].length;j++) {
+				rSum += arr[row][j]; 
+			}
+		return rSum;
+	}
+	
+	public static int colSum(int[][] arr,int col) {
+		int cSum = 0;
+			for(int i = 0;i < arr.length;i++) {
+				cSum += arr[i][col]; 
+			}
+		return cSum;
+	}
+
+	public static void findLargest(int input[][]){
+		int maxSum = rowSum(input,0);
+		String dim = "row";
+		int index = 0;
+		for(int i = 1;i < input.length;i++)
+			if(maxSum < rowSum(input,i)) {
+				maxSum = rowSum(input,i);
+				dim = "";
+				dim += "row";
+				index = i;
+			}
+		
+		for(int j = 0;j < input[0].length;j++){
+			if(maxSum < colSum(input,j)) {
+				maxSum = colSum(input,j);
+				dim = "";
+				dim += "column";
+				index = j;
+			}
+        }
+	  System.out.print(dim + " " + index + " " + maxSum);
+	}
+
+}
