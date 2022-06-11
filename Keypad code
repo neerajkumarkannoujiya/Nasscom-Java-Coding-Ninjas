@@ -1,0 +1,102 @@
+public class solution {
+
+	// Return a string array that contains all the possible strings
+	private static char[] helper(int n) {
+        char ch[] = {' '};
+        switch(n-1) {
+            case 1:
+                char ch1[] = {'a', 'b', 'c'};
+                return ch1;
+        
+            case 2:
+                char ch2[] = {'d', 'e', 'f'};
+                return ch2;
+                
+            case 3:
+                char ch3[] = {'g', 'h', 'i'};
+                return ch3;
+               
+            case 4:
+                char ch4[] = {'j', 'k', 'l'};
+                return ch4;
+                
+            case 5:
+                char ch5[] = {'m', 'n', 'o'};
+                return ch5;
+                
+            case 6:
+                char ch6[] = {'p', 'q', 'r', 's'};
+                return ch6;
+                
+            case 7:
+                char ch7[] = {'t', 'u', 'v'};
+                return ch7;
+                
+            case 8:
+                char ch8[] = {'w', 'x', 'y', 'z'};
+                return ch8;
+                
+            default:
+                System.out.println("Not a valid number");
+                break;
+        }
+        return ch;
+    }
+    
+	public static String[] keypad(int n){
+		if(n == 0) {
+            String s[] = {""};
+            return s;
+        }
+        
+        String smallAns[] = keypad(n/10);
+        char[] ch = helper(n % 10);
+        String ans[] = new String[smallAns.length * ch.length];
+        
+        int k = 0;
+        for(int i=0; i<smallAns.length; i++) {
+            for(int j=0; j<ch.length; j++) {
+                ans[k] = smallAns[i] + ch[j];
+                k++;
+            }
+        }
+		return ans;
+	}
+	
+}
+
+
+
+import java.util.Scanner;
+
+public class runner {
+	
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		int input = s.nextInt();
+		String output[] = solution.keypad(input);
+		for(int i = 0; i < output.length; i++) {
+			System.out.println(output[i]);
+		}
+	}
+}
+
+
+
+
+OUTPUT:-
+
+
+Sample Input:
+23
+Sample Output:
+ad
+ae
+af
+bd
+be
+bf
+cd
+ce
+cf
+
