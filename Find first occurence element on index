@@ -1,0 +1,39 @@
+/* package codechef; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Codechef
+{
+        public static int findIndexArray(int [] arr,int index,int val){
+            if(index==arr.length){
+                return -1;
+            }
+            if(arr[index]==val){
+                return index;
+            }
+            else{
+                int find = findIndexArray(arr,index+1,val);
+                return find;
+            }
+        }
+    
+    
+	public static void main (String[] args) throws java.lang.Exception{
+
+            Scanner s = new Scanner(System.in);
+            int n = s.nextInt();
+            int arr[] = new int[n];
+            int val = s.nextInt();
+            for(int i = 0;i<n;i++){
+                arr[i]=s.nextInt();
+            }
+            int index = findIndexArray(arr,0,val);
+            System.out.print(index);
+
+    
+		// your code goes here
+	}
+}
