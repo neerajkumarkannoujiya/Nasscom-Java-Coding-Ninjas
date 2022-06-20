@@ -1,0 +1,97 @@
+/*
+	To apply the method explained in the hint video, we have to add two more parameters in the function call. This can be done by calling a helper function from given function. The helper function can have three parameters: array, start index, end index.  
+	
+	Skeleton code to achieve this:
+	public class Solution {
+		public static void quickSort(int[] input, int startIndex, int endInedx) {
+			// your code goes here
+		}
+	
+		public static void quickSort(int[] input) {
+			quickSort(input, 0, input.length - 1);
+		}
+	
+	}
+	
+*/
+
+
+public class Solution {
+    private static int partition(int[] input,int start, int end){
+        int pivot_element=input[start];
+        int temp;
+        int count=0;
+        for(int i=start+1;i<=end;i++){
+            if(input[i]<=pivot_element){
+                count++;
+            }
+        }
+        int pivot_position=start+count;
+        temp=input[start];
+        input[start]=input[start+count];
+        input[start+count]=temp;
+        int i=start;
+        int j=end;
+        while(i<j && i<pivot_position && j>pivot_position){
+        while(input[i]<=pivot_element){
+            i++; 
+        }
+        while(input[j]>pivot_element){
+            j--;
+        }
+    	if(i<=j){
+        temp=input[i];
+        input[i]=input[j];
+        input[j]=temp;
+            i++;
+            j--;
+        }
+        
+        }
+        return pivot_position;
+            
+    }
+    
+    private static void quicksort(int[] input, int start,int end){
+        // base case
+        if(start>=end)
+            return ;
+        
+        int partition_position=partition(input,start,end);
+        quicksort(input,start,partition_position-1);
+        quicksort(input,partition_position+1,end);
+    }
+	
+	public static void quickSort(int[] input) {
+    	quicksort(input,0,input.length-1);
+		
+	}
+	
+}
+
+
+
+
+import java.util.Scanner;
+
+public class Runner {
+	
+	static Scanner s = new Scanner(System.in);
+	
+	public static int[] takeInput(){
+		int size = s.nextInt();
+		int[] input = new int[size];
+		for(int i = 0; i < size; i++){
+			input[i] = s.nextInt();
+		}
+		return input;
+	}
+	
+	public static void main(String[] args) {
+		int[] input = takeInput();
+		Solution.quickSort(input);
+		for(int i = 0; i < input.length; i++) {
+			System.out.print(input[i] + " ");
+		}
+	}
+}
