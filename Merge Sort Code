@@ -1,0 +1,82 @@
+public class solution {
+    private static void merge(int[] arr,int low,int high){
+        int mid = (low + high)/2;
+        int []brr = new int[high-low+1];
+        int i =low;
+        int j = mid+1;
+        int k = 0;
+        while(i<=mid && j<=high){
+            if(arr[i]<arr[j]){
+                brr[k]=arr[i];
+                k++;
+                i++;
+            }
+            else{
+                brr[k]=arr[j];
+                k++;
+                j++;
+                
+            }
+        }
+        while(i<=mid){
+            brr[k]=arr[i];
+            k++;
+            i++;
+        }
+        while(j<=high){
+            brr[k]=arr[j];
+            k++;
+            j++;
+        }
+        
+        for(int m = 0; m<brr.length; m++){
+            arr[low + m]=brr[m];
+        }
+    }
+    
+    public static void mergeSor(int[] arr, int low, int high){
+        if(low>=high){
+            return ;
+        }
+        int mid = (high + low)/2;
+        mergeSor(arr,low,mid);  //1
+        mergeSor(arr,mid+1,high);  //2
+        merge(arr,low,high);  //3
+    }
+    
+	public static void mergeSort(int[] input){
+		// Write your code here
+        int low = 0;
+        int high = input.length-1;
+        mergeSor(input,low,high);
+		
+	}
+}
+
+
+
+import java.util.Scanner;
+
+public class runner {
+	public static int[] takeInput() {
+		Scanner s = new Scanner(System.in);
+		int size = s.nextInt();
+		int arr[] = new int[size];
+		for (int i = 0; i < size; i++) {
+			arr[i] = s.nextInt();
+		}
+		return arr;
+	}
+	
+	public static void printArray(int input[]) {
+		for(int i = 0; i < input.length; i++) {
+			System.out.print(input[i] + " ");
+		}
+	}
+	
+	public static void main(String[] args) {
+		int[] input = takeInput();
+		solution.mergeSort(input);
+		printArray(input);
+	}
+}
