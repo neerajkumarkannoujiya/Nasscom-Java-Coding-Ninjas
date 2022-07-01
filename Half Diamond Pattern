@@ -1,0 +1,61 @@
+'''
+Half Diamond Pattern
+
+*
+*1*
+*121*
+*12321*
+*1234321*
+*123454321*
+*1234321*
+*12321*
+*121*
+*1*
+*
+
+'''
+import java.util.*;
+public class Solution {
+    
+    public static void main(String[] args) {
+        Scanner inp=new Scanner(System.in);
+        int N=inp.nextInt();
+        int i=1;
+        System.out.println("*");
+        while(i<=N){
+            int inc=1;
+            System.out.print("*");
+            while(inc<=i){
+                System.out.print(inc);
+                inc+=1;
+            }
+            int dec=i-1;
+            while(dec>=1){
+                System.out.print(dec);
+                dec-=1;
+            }
+            System.out.print("*");
+            i+=1;
+            System.out.println();
+        }
+        int n=N-1;
+        int i1=n;
+        while(i1>=1){
+            int inc1=1;
+            System.out.print("*");
+            while(inc1<=i1){
+                System.out.print(inc1);
+                inc1++;
+            }
+            int dec1=i1-1;
+            while(dec1>=1){
+                System.out.print(dec1);
+                dec1--;
+            }
+            System.out.println("*");
+            //System.out.println();
+            i1-=1;
+        }
+        System.out.println("*");
+    }
+}
