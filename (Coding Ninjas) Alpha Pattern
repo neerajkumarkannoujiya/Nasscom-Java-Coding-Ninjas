@@ -6,7 +6,7 @@ public class Solution {
         Scanner s= new Scanner(System.in);
         int num = s.nextInt();
         
-     
+    
         
         int i = 1;
       
