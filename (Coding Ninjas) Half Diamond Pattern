@@ -41,6 +41,7 @@ public class Solution {
             i+=1;
             System.out.println();
         }
+        
         int n=N-1;
         int i1=n;
         while(i1>=1){
