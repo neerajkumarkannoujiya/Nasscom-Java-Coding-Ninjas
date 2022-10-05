@@ -17,7 +17,6 @@ public class Main {
             String val =String.valueOf(rem);
             reverse=val+reverse;
            
-            
         }
         System.out.println(reverse);
         }
