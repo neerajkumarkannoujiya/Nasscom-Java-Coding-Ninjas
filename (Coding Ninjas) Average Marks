@@ -12,8 +12,7 @@ public class Solution {
         int m3 = s.nextInt();
         System.out.println(ch);
         int avr = (m1+m2+m3)/3;
-        System.out.println(avr);
-			
+        System.out.println(avr);	
 		
 	}
 
