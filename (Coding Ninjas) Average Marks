@@ -13,5 +13,6 @@ public class Solution {
         int avr = (m1+m2+m3)/3;
         System.out.println(avr);	
 		
+		
 	}
 }
