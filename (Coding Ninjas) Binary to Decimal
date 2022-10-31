@@ -14,6 +14,7 @@ public class Main {
             val=val+(int)(rem*Math.pow(2,i));
             i++;
         }
+	
         System.out.println(val);
 	}
 }
