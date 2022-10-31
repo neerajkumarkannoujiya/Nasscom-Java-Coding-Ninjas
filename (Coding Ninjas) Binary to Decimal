@@ -13,7 +13,6 @@ public class Main {
             num = num/10;
             val=val+(int)(rem*Math.pow(2,i));
             i++;
-	   
         }
         System.out.println(val);
 	}
