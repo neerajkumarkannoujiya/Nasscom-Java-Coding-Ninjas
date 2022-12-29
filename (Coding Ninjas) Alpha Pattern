@@ -14,7 +14,6 @@ public class Solution {
                     System.out.print(ch);
                     j=j+1;
                 }
-		
             System.out.println();
             i=i+1;
         }
