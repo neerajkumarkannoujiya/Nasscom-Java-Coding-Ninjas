@@ -1,4 +1,5 @@
 /*
+
 	To apply the method explained in the hint video, we have to add two more parameters in the function call. This can be done by calling a helper function from given function. The helper function can have
 	three parameters: array, start index, end index.  
 	
