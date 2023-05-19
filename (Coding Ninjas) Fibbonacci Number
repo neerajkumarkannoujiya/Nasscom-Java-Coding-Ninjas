@@ -1,4 +1,3 @@
-
 public class Solution {
 	
 	public static boolean checkMember(int n){
