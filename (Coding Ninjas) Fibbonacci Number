@@ -23,7 +23,6 @@ public class Solution {
         }
         
 	 	* Don't read input, it is passed as function argument.
-	 	* Taking input and printing output is handled automatically.
 		*/
 
 	}
