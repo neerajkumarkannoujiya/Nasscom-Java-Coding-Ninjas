@@ -1,6 +1,6 @@
 public class Solution {
 	
-	public static boolean checkMember(int n){
+    public static boolean checkMember(int n){
 		
         int n1=1;
         int n2=1;
